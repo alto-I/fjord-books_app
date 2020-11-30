@@ -1,0 +1,8 @@
+en:
+  button:
+    new_book: new book
+    edit: edit
+    back: back
+    show: show
+    index: index
+    destroy: destroy

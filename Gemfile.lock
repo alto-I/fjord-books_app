@@ -171,6 +171,8 @@ GEM
     rubocop-fjord (0.1.4)
       rubocop (>= 1.0)
       rubocop-performance
+    rubocop-packaging (0.5.1)
+      rubocop (>= 0.89, < 2.0)
     rubocop-performance (1.9.0)
       rubocop (>= 0.90.0, < 2.0)
       rubocop-ast (>= 0.4.0)
@@ -244,11 +246,13 @@ DEPENDENCIES
   byebug
   capybara (>= 2.15)
   carrierwave
+  i18n
   jbuilder (~> 2.7)
   listen (~> 3.2)
   puma (~> 4.1)
   rails (~> 6.0.3, >= 6.0.3.4)
   rubocop-fjord
+  rubocop-packaging
   rubocop-rails
   sass-rails (>= 6)
   selenium-webdriver

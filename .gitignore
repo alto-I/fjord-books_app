@@ -41,3 +41,7 @@ yarn-debug.log*
 .yarn-integrity
 
 /public/uploads/*
+
+#deviseで作成されたテストファイル
+test/fixtures/users.yml
+test/models/user_test.rb

@@ -43,5 +43,5 @@ yarn-debug.log*
 /public/uploads/*
 
 #deviseで作成されたテストファイル
-test/fixtures/users.yml
-test/models/user_test.rb
+test/*
+

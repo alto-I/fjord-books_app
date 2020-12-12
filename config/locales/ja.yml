@@ -6,6 +6,9 @@ ja:
     postal_code: 郵便番号
     address: 住所
     introduce_yourself: 自己紹介文
+    my_page: マイページ
+    user_page: ユーザーページ
+    users: ユーザー一覧
   activerecord:
     errors:
       messages:
@@ -213,6 +216,7 @@ ja:
     pm: 午後
   views:
     common:
+      home: ホームへ
       show: 詳細
       edit: 編集
       destroy: 削除

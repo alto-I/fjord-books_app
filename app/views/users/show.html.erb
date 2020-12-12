@@ -1,11 +1,15 @@
-<h1><%= @user.user_name %>のユーザーページ</h1>
+<% if user_signed_in? && @user == current_user %>
+  <h1><%= t('user.my_page')%> </h1>
+<% else %>
+  <h1><%= t('user.user_page')%> </h1>
+<% end %>
 <h3><%= t('user.name')%></h3>
-<%= @user.user_name%>
+<p><%= @user.user_name%></p>
 <h3><%= t('user.email')%></h3>
-<%= @user.email %>
+<p><%= @user.email %></p>
 <h3><%= t('user.postal_code')%></h3>
-<%= @user.postal_code%>
+<p><%= @user.postal_code%></p>
 <h3><%= t('user.address')%></h3>
-<%= @user.address%>
+<p><%= @user.address%></p>
 <h3><%= t('user.introduce_yourself')%></h3>
-<%= @user.introduce_yourself%>
+<p><%= @user.introduce_yourself%></p>

@@ -41,7 +41,3 @@ yarn-debug.log*
 .yarn-integrity
 
 /public/uploads/*
-
-#deviseで作成されたテストファイル
-test/*
-

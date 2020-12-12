@@ -1,0 +1,5 @@
+<h1><%= t('user.users') %> </h1>
+  <% @users.each do |user| %>
+    ・<%= link_to user.user_name, user_path(user) %><br>
+  <% end %>
+</table>

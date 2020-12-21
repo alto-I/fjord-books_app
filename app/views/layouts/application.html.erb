@@ -31,7 +31,7 @@
     <%= yield %>
     <% if user_signed_in? %>
       <p><%= link_to t('views.common.home'), root_path %></p>
-      <p><%= link_to t('user.users'), user_index_url %></p>
+      <p><%= link_to t('user.users'), users_path %></p>
     <% end %>
   </body>
 </html>

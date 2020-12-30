@@ -1,0 +1,15 @@
+<% if user_signed_in? && @user == current_user %>
+  <h1><%= t('user.my_page')%> </h1>
+<% else %>
+  <h1><%= t('user.user_page')%> </h1>
+<% end %>
+<h3><%= t('user.name')%></h3>
+<p><%= @user.user_name%></p>
+<h3><%= t('user.email')%></h3>
+<p><%= @user.email %></p>
+<h3><%= t('user.postal_code')%></h3>
+<p><%= @user.postal_code%></p>
+<h3><%= t('user.address')%></h3>
+<p><%= @user.address%></p>
+<h3><%= t('user.introduce_yourself')%></h3>
+<p><%= @user.introduce_yourself%></p>

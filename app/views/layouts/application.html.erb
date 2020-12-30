@@ -10,6 +10,28 @@
   </head>
 
   <body>
+    <% if notice %>
+      <%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <%= alert %></p>
+    <% end %>
+
+    <p>
+      <% if user_signed_in? %>
+        <p><%= t('devise.shared.links.sign_in_with_provider', provider: current_user.email ) %></p>
+        <%= link_to t('user.my_page'), user_path(current_user) %> |
+        <%= link_to t('devise.registrations.edit.profile'), edit_user_registration_path %> |
+        <%= link_to t('devise.sessions.sign_out'), destroy_user_session_path, method: :delete %>
+      <% else %>
+        <%= link_to t('devise.registrations.new.sign_up'), new_user_registration_path %> |
+        <%= link_to t('devise.sessions.new.sign_in'), new_user_session_path %>
+      <% end %>
+    </p>
     <%= yield %>
+    <% if user_signed_in? %>
+      <p><%= link_to t('views.common.home'), root_path %></p>
+      <p><%= link_to t('user.users'), users_path %></p>
+    <% end %>
   </body>
 </html>

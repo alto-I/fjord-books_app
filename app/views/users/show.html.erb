@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <h1><%= t('views.common.title_show', name: User.model_name.human) %></h1>
 
 <p>
@@ -35,6 +33,24 @@
   <% end %>
 </p>
 
+<p>
+  following
+  <%= @user.followings.count  %>
+  follower
+  <%= @user.followers.count %>
+</p>
+
+<p>
+  <%= link_to(User.human_attribute_name(:following_list), followings_user_path) %>
+</p>
+
+<p>
+  <%= link_to(User.human_attribute_name(:follower_list), followers_user_path) %>
+</p>
+
+<p>
+  <%= render 'relationships/follow_button', user: @user %>
+</p>
 <% if current_user == @user %>
   <%= link_to t('views.common.edit'), edit_user_registration_path %> |
 <% end %>

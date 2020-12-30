@@ -12,14 +12,14 @@ class User < ApplicationRecord
   end
 
   def self.find_for_github_oauth(auth, _signed_in_resource = nil)
-    user = User.find_by(provider: auth.provider, uid: auth.uid)
-
-    user ||= User.new(provider: auth.provider,
-                      uid: auth.uid,
-                      name: auth.info.name,
-                      email: auth.info.email,
-                      password: Devise.friendly_token[0, 20])
-    user.save
+    user = User.find_or_initialize_by(provider: auth.provider,
+                                      uid: auth.uid,
+                                      name: auth.info.name,
+                                      email: auth.info.email)
+    if user.new_record?
+      user.password = Devise.friendly_token[0, 20]
+      user.save
+    end
     user
   end
 end

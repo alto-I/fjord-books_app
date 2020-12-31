@@ -1,0 +1,23 @@
+<p>
+  <strong>posted_date:</strong>
+  <%= @report.created_at.to_s(:datetime_jp) %>
+</>
+
+<p>
+  <strong>ontributor:</strong>
+  <%= User.find(@report.user_id).name %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @report.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @report.description %>
+</p>
+<% if current_user == @report.user %>
+  <%= link_to 'Edit', edit_report_path(@report) %> |
+<% end %>
+<%= link_to 'Back', reports_path %>

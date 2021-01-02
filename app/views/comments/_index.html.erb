@@ -1,0 +1,30 @@
+<p>
+  <strong><%= Comment.model_name.human %></strong>
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th><%= Comment.human_attribute_name(:posted_date) %></th>
+      <th><%= Comment.human_attribute_name(:contributor) %></th>
+      <th><%= Comment.human_attribute_name(:body) %></th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% comments.each do |comment| %>
+      <tr>
+        <td><%= comment.created_at.to_s(:datetime_jp) %></td>
+        <% if comment.user.name.empty? %>
+          <td><%= comment.user.email %></td>
+        <% else %>
+          <td><%= comment.user.name %></td>
+        <% end %>
+        <td><%= comment.body %></td>
+        <% if current_user == comment.user %>
+          <td><%= link_to t('views.common.destroy'), [commentable, comment], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

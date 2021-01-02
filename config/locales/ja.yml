@@ -245,6 +245,7 @@ ja:
       notice_create: "%{name}が作成されました。"
       notice_update: "%{name}が更新されました。"
       notice_destroy: "%{name}が削除されました。"
+      notice_denyed: "投稿者以外編集、削除はできません。"
   relationships:
     create:
       notice: "フォローしました。"
@@ -255,3 +256,5 @@ ja:
     registrations:
       edit:
         title: "アカウント編集"
+  comment:
+    nothing: "コメントはありません"

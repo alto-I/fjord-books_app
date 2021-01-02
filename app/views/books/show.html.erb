@@ -27,7 +27,7 @@
 <% if @book.comments.exists? %>
   <%= render 'comments/index', commentable: @book, comments: @book.comments %>
 <% else %>
-  <p>コメントはありません</p>
+  <p><%= t('comment.nothing')%></p>
 <% end %>
 
 <%= render 'comments/form', commentable: @book, comment: @book.comments.build %>

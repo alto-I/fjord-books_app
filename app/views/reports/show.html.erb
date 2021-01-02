@@ -29,7 +29,7 @@
 <% if @report.comments.exists? %>
   <%= render 'comments/index', commentable: @report, comments: @report.comments %>
 <% else %>
-  <p><%= t('comment.nothing')%> </p>
+  <p><%= t('comment.nothing')%></p>
 <% end %>
 
 <%= render 'comments/form', commentable: @report, comment: @report.comments.build %>

@@ -4,22 +4,14 @@ class RelationshipsController < ApplicationController
   before_action :set_user
 
   def create
-    following = current_user.follow(@user)
-    if following.save
-      flash[:notice] = t('controllers.follow.success')
-    else
-      flash.now[:notice] = t('controllers.follow.false')
-    end
+    current_user.follow(@user)
+    flash[:notice] = t('controllers.follow.success')
     redirect_to @user
   end
 
   def destroy
-    following = current_user.unfollow(@user)
-    if following.destroy
-      flash[:notice] = t('controllers.unfollow.success')
-    else
-      flash.now[:notice] = t('controllers.unfollow.false')
-    end
+    current_user.unfollow(@user)
+    flash[:notice] = t('controllers.unfollow.success')
     redirect_to @user
   end
 

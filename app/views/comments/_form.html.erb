@@ -1,19 +1,10 @@
 <%= form_with(model: [commentable, comment], local: true) do |form| %>
-  <% if commentable.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(commentable.errors.count, "error") %> prohibited this comment from being saved:</h2>
 
-      <ul>
-        <% commentable.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+<%= render 'layouts/error_explanation', model: commentable %>
 
   <div class="field">
     <%= form.label :body %>
-    <%= form.text_field :body, :required => true %>
+    <%= form.text_field :body, required: true %>
   </div>
 
   <div class="actions">

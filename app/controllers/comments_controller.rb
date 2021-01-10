@@ -43,8 +43,6 @@ class CommentsController < ApplicationController
 
   def contribute_user?
     return if current_user == @comment.user
-
-    redirect_to report_comments_path
-    flash[:notice] = t('controllers.common.notice_denyed')
+    redirect_to @commentable, notice: t('controllers.common.notice_denyed')
   end
 end

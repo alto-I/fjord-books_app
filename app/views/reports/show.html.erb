@@ -3,7 +3,7 @@
 
 <p>
   <strong><%= Report.human_attribute_name(:posted_date) %>:</strong>
-  <%= @report.created_at.to_s(:datetime_jp) %>
+  <%= l @report.created_at %>
 </>
 
 <p>

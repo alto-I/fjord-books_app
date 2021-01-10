@@ -22,10 +22,7 @@ class ReportsController < ApplicationController
 
   # POST /reports
   def create
-    permit_params = report_params
-    permit_params['user_id'] = current_user.id
-    @report = Report.new(permit_params)
-
+    @report = current_user.reports.build(report_params)
     if @report.save
       redirect_to @report, notice: t('controllers.common.notice_create', name: Report.model_name.human)
     else
@@ -61,9 +58,7 @@ class ReportsController < ApplicationController
   end
 
   def contribute_user?
-    return if current_user == @comment.user
-
-    redirect_to reports_path
-    flash[:notice] = t('controllers.common.notice_denyed')
+    return if current_user == @report.user
+    redirect_to reports_path, notice: t('controllers.common.notice_denyed')
   end
 end

@@ -107,6 +107,7 @@ ja:
       month: 月
       year: 年
   errors:
+    prohibited: "%{count}個のエラーが発生し、保存出来ません"
     format: "%{attribute}%{message}"
     messages:
       accepted: を受諾してください
@@ -258,3 +259,6 @@ ja:
         title: "アカウント編集"
   comment:
     nothing: "コメントはありません"
+  time:
+    formats:
+      default: "%Y/%m/%d(%a)"

@@ -23,7 +23,6 @@
 <%= link_to t('views.common.edit'), edit_book_path(@book) %> |
 <%= link_to t('views.common.back'), books_path %>
 
-
 <% if @book.comments.exists? %>
   <%= render 'comments/index', commentable: @book, comments: @book.comments %>
 <% else %>

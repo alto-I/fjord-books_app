@@ -59,6 +59,7 @@ class ReportsController < ApplicationController
 
   def contribute_user?
     return if current_user == @report.user
+
     redirect_to reports_path, notice: t('controllers.common.notice_denyed')
   end
 end

@@ -43,6 +43,7 @@ class CommentsController < ApplicationController
 
   def contribute_user?
     return if current_user == @comment.user
+
     redirect_to @commentable, notice: t('controllers.common.notice_denyed')
   end
 end

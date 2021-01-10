@@ -231,10 +231,8 @@ ja:
       notice_destroy: "%{name}が削除されました。"
     follow:
       success: "ユーザーをフォローしました"
-      false: "ユーザーのフォローに失敗しました"
     unfollow:
       success: "ユーザーのフォローを解除しました"
-      false: "ユーザーのフォロー解除に失敗しました"
   layouts:
     application:
       menu: メニュー

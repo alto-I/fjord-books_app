@@ -5,14 +5,12 @@ class RelationshipsController < ApplicationController
 
   def create
     current_user.follow(@user)
-    flash[:notice] = t('controllers.follow.success')
-    redirect_to @user
+    redirect_to @user, notice: t('controllers.follow.success')
   end
 
   def destroy
     current_user.unfollow(@user)
-    flash[:notice] = t('controllers.unfollow.success')
-    redirect_to @user
+    redirect_to @user, notice: t('controllers.unfollow.success')
   end
 
   private

@@ -14,7 +14,7 @@
     <% @reports.each do |report| %>
       <tr>
         <td><%= report.title %></td>
-        <td><%= link_to report.user.name_or_email, report.user %></td>
+        <td><%= link_to report.user.name_or_email, report.user %></td> 
         <td><%= l report.created_on %></td>
         <td><%= link_to t('views.common.show'), report %></td>
         <% editable = report.editable?(current_user) %>

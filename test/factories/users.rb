@@ -1,13 +1,15 @@
+# frozen_string_literal: true
+
 FactoryBot.define do
   factory :alice, class: User do
-    name { "Alice" }
-    email { "alice@example.com" }
+    name { 'Alice' }
+    email { 'alice@example.com' }
     password { 'password' }
   end
 
   factory :bob, class: User do
-    name { "Bob" }
-    email { "bob@example.com" }
+    name { 'Bob' }
+    email { 'bob@example.com' }
     password { 'password' }
   end
 
@@ -16,6 +18,6 @@ FactoryBot.define do
     email { 'github@example.com' }
     password { 'password' }
     provider { 'github' }
-    uid { 123456 }
+    uid { 123_456 }
   end
 end

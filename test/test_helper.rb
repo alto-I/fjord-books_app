@@ -9,13 +9,13 @@ class ActiveSupport::TestCase
 
   def github_auth
     OmniAuth::AuthHash.new({
-      provider: 'github',
-      uid: '123456',
-      info: {
-        name: 'github_user',
-        email: 'github@example.com'
-      }
-    })
+                             provider: 'github',
+                             uid: '123456',
+                             info: {
+                               name: 'github_user',
+                               email: 'github@example.com'
+                             }
+                           })
   end
 
   parallelize(workers: :number_of_processors)

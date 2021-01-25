@@ -1,0 +1,18 @@
+<%= form_with(model: report, local: true) do |form| %>
+
+<%= render 'layouts/error_explanation', model: report %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title, required: true %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description, required: true %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

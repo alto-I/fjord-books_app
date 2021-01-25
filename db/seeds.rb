@@ -72,4 +72,21 @@ User.order(id: :desc).each do |user|
   end
 end
 
+55.times do |n|
+  user_id = rand(1..10)
+  user = User.find(user_id)
+  Report.create!(title: "#{n}日目",
+                 description: Faker::Music.album,
+                 user_id: user.id)
+end
+
+500.times do |n|
+  random_id = rand(1..55)
+  user_id = rand(1..55)
+  report = Report.find(random_id)
+  report.comments.create!(commentable_id: n,
+                          body: Faker::Music.genre,
+                          user_id: user_id)
+end
+
 puts '初期データの投入が完了しました。' # rubocop:disable Rails/Output

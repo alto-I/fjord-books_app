@@ -107,6 +107,7 @@ ja:
       month: 月
       year: 年
   errors:
+    prohibited: "%{count}個のエラーが発生し、保存出来ません"
     format: "%{attribute}%{message}"
     messages:
       accepted: を受諾してください
@@ -245,6 +246,7 @@ ja:
       notice_create: "%{name}が作成されました。"
       notice_update: "%{name}が更新されました。"
       notice_destroy: "%{name}が削除されました。"
+      notice_denyed: "投稿者以外編集、削除はできません。"
   relationships:
     create:
       notice: "フォローしました。"
@@ -255,3 +257,8 @@ ja:
     registrations:
       edit:
         title: "アカウント編集"
+  comment:
+    nothing: "コメントはありません"
+  time:
+    formats:
+      default: "%Y/%m/%d(%a)"

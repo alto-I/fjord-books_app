@@ -27,7 +27,7 @@
 <%= link_to t('views.common.back'), reports_path %>
 
 <% if @report.comments.exists? %>
-  <%= render 'comments/index', commentable: @report, comments: @report.comments %>
+  <%= render 'comments/index', commentable: @report, comments: @report_comments %>
 <% else %>
   <p><%= t('comment.nothing')%></p>
 <% end %>
